@@ -1,98 +1,116 @@
 //1.1
 
-function EvenNumber (num1, num2) {
-  if (num1 % 2==0) {
-    return num1 * num2
-} 
-  else {
-    return num1 + num2;
+function getEvenNumber(num1, num2) {
+    if (num1 % 2 == 0) {
+        return num1 * num2;
+    } else {
+        return num1 + num2;
+    }
 }
-}
-// console.log(EvenNumber(6,5));
 
-// 1.2
+console.log(getEvenNumber(0,5));
 
-function GetPoint (num1, num2) {
-    if (num1 == 0,num2 == 0) {
-        return "начало координат"
+//  1.2
+
+function getPoint(num1, num2) {
+    let result = "";
+    if (num1 == 0, num2 == 0) {
+        result = "начало координат";
      }
     else if (num1 > 0, num2 > 0) {
-        return "1-ая четверть"
+        result = "1-ая четверть";
      }
     else if (num1 < 0, num2 > 0) {
-        return "2-ая четверть"
+        result = "2-ая четверть";
      }
     else if (num1 < 0, num2 < 0) {
-        return "3-я четверть"
+        result = "3-я четверть";
      }
     else if (num1 > 0, num2 < 0) {
-        return "4-я четверть"
+        result = "4-я четверть";
      }
+
+     return result;
  }
-// console.log(GetPoint(5,-9));
+
+console.log(getPoint(0, 0));
 
 // 1.3
 
-function PosNumSum (num1, num2, num3) {
+function getPosNumSum(num1, num2, num3) {
+   let result = 0;
+
     if (num1 > 0 && num2 > 0 && num3 > 0) {
-        return num1 + num2 + num3
+        result =  num1 + num2 + num3;
     } 
     if (num1 < 0 && num2 > 0 && num3 > 0) {
-        return num2 + num3
+        result =  num2 + num3;
     }
     if (num1 > 0 && num2 < 0 && num3 > 0) {
-        return num1 + num3
+        result = num1 + num3;
     }
     if (num1 > 0 && num2 > 0 && num3 < 0) {
-        return num1 + num2
+        result = num1 + num2;
     }
+
+    return result;
 }    
 
-// console.log(PosNumSum(1,-2,3));
+console.log(getPosNumSum(1,-2,3));
 
 
-// 1.4
-function getMaxValue (num1, num2, num3) {
+//  1.4
+function getMaxValue(num1, num2, num3) {
+    let result = 0;
+
     if (num1 + num2 + num3 > num1 * num2 * num3) {
-        return (num1 + num2 + num3) + 3
+        result =  (num1 + num2 + num3) + 3;
     }
     if (num1 + num2 + num3 < num1 * num2 * num3) {
-        return  num1*num2*num3 +3
+        result =  num1 * num2 * num3 + 3;
     }
     if (num1 + num2 + num3 == num1 * num2 * num3) {
-        return "результат одинаков"
+        result =  "результат одинаков";
     }
-}
-// console.log(getMaxValue(1,2,3));
 
-// 1.5
-function getStudRat (n)     {
+    return result;
+}
+
+console.log(getMaxValue(1,2,3));
+
+//  1.5
+
+function getStudRat(n) {
+    let result = "";
 
     if (n > 0 && n < 19) {
-        return "F"
+        result = "F";
     }
     else if (n > 20 && n < 39) {
-        return "E"
+        result = "E";
     }
     else if (n > 40 && n < 59) {
-        return "D"
+        result = "D";
     }
     else if (n > 60 && n < 74) {
-        return "C"
+        result = "C";
     }
     else if (n > 75 && n < 89) {
-        return "B"
+        result = "B";
     }
     else if (n > 90 && n < 100) {
-        return "A"
+        result = "A";
     }
+    
+    return result;
 }
-// console.log(getStudRat(13));
+
+console.log(getStudRat(13));
 
 
 //  2.1 Найти сумму четных чисел и их количество в диапазоне от 1 до 99 */
 
-function getSumQ () {
+function getSumQ() {
     let sum = 0;
     let quantity = 0;
     let i = 1;
@@ -104,100 +122,87 @@ function getSumQ () {
     return `sum ${sum} and quantity ${quantity}`;
 }
  
-// console.log(getSumQ());
+console.log(getSumQ());
 
 
 // 2.2 Проверить простое ли число? (число называется простым, если оно делится только само на себя и на 1)
 
-function getPrimeNum (n) {
- let result = 0;
- let i = 2;
-   
- for (i = 2; i < n; i ++) {
-     if (n % i == 0) return result = "slojnoye "
-    } 
-    return result = "simple"
-}
-// console.log (getPrimeNum(5);
 
-
-
-function prime (n){         
+function getSimpleNumber (n) {         
     let result = "simple";
 
-
-    for (i = 2; i < n; i++) {
+    for (let i = 2; i < n; i++) {
         if (n % i == 0)     {
             result = "complicated"; break;
-        }
-        else {
+        } else {
             return result;
         }
     }
+
         return result;
 }      
 
-// console.log(prime(42));
+console.log(getSimpleNumber(7));
 
-// 2.4 Вычислить факториал числа n. n! = 1*2*…*n-1*n;!
+//  2.4 Вычислить факториал числа n. n! = 1*2*…*n-1*n;!
 
-function findFact (n) {
+function findFact(n) {
     let result = 1;
     let i = 1;
 
    for (i = 1; i <= n; i++) { 
-        result *= i ;
-       
-         
+        result *= i;
     }
-    return result
+
+    return result;
 } 
-//  console.log(findFact(3));
 
-// 2.5 Посчитать сумму цифр заданного числа
+ console.log(findFact(4));
 
-function sumDigNum (n) {
+//  2.5 Посчитать сумму цифр заданного числа
+
+function sumDigNum(n) {
   let result = 0;
   let i = 0;
 
-while (n >= 0){
-    i = n % 10
-    n = ( n - i ) / 10;
-    result += i;
+    while (n >= 0) {
+        i = n % 10;
+        n = ( n - i ) / 10;
+        result += i;
 
-    if (!n)     {
-    return result;
-    }
-}  
+        if (!n) {
+            return result;
+        }
+    }  
 }
      
-// console.log(sumDigNum(85));
+console.log(sumDigNum(80));
 
-// 2.6 ⦁	Вывести число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.(i-ostatok)
+//  2.6 ⦁	Вывести число, которое является зеркальным отображением последовательности цифр заданного числа, например, задано число 123, вывести 321.(i-ostatok)
 
-function reverseNum (num) {
+function reverseNum(num) {
     let result = 0;
     let i = 0;
 
-  while (num >= 0) {
-    i = num % 10;
-    result = result * 10 + i; //проверить почему не работает *=
-    num = (num - i ) / 10;
-    
-    if (!num) {
-        return result;
-      }
-  }
+    while (num >= 0) {
+        i = num % 10;
+        result = result * 10 + i; //проверить почему не работает *= (не смогла найти адекватное объяснениею, проработать этот пункт на уроке)
+        num = (num - i ) / 10;
+        
+        if (!num) {
+            return result;
+        }
+    }
 }  
-//  console.log(reverseNum(300), 'return');
 
-// 3.1 Найти минимальный элемент массива
+ console.log(reverseNum(57));
 
-function getMinEl (arr) {
+//  3.1 Найти минимальный элемент массива
+
+function getMinEl(arr) {
     let min = arr[0];
 
     for (let i = 0; i < arr.length; i++) {
-        
         if ( min > arr[i]) {
             min = arr[i];
         }
@@ -208,34 +213,34 @@ function getMinEl (arr) {
 
 let arr = [3, 7, 1, 6, 25];
 
+console.log(getMinEl(arr));
 
-// 3.2 Найти максимальный элемент массива
 
-function getMaxEl (maxArr) {
+//  3.2 Найти максимальный элемент массива
+
+function getMaxEl(maxArr) {
     let max = maxArr[0];
 
     for (let i = 0; i < maxArr.length; i++) {
-        
-        if (max < maxArr[i])  {
-            max = maxArr[i];
-            
+        if (max < maxArr[i]) {
+            max = maxArr[i];    
         }
     }
+
     return max;
 }
 
 let maxArr = [5, 10, 6, 9];
 
-// console.log(getMaxEl(maxArr));
+console.log(getMaxEl(maxArr));
 
-// 3.3 Найти индекс минимального элемента массива
+//  3.3 Найти индекс минимального элемента массива
 
-function getMinInd (arr) {
+function getMinInd(arr) {
     let min = arr[0];
     let ind = 0;
 
     for (let i = 0; i < arr.length; i++) {
-        
         if ( min > arr[i]) {
             min = arr[i];
             ind = i;
@@ -245,102 +250,81 @@ function getMinInd (arr) {
     return ind;
 }
 
-let array = [3, 7, 100, 6, 25];
+let array = [3, 7, 1, 6, 25];
 
-// console.log(getMinInd(array));
+console.log(getMinInd(array));
 
-// 3.4 Найти индекс максимального элемента массива             (Ind-index)
 
-function getMaxInd (maxArrInd) {
+//  3.4 Найти индекс максимального элемента массива             (Ind-index)
+
+function getMaxInd(maxArrInd) {
     let max = maxArrInd[0];
     let ind = 0;
 
     for (let i = 0; i < maxArrInd.length; i++) {
-        
-        if (max < maxArrInd[i])  {
+        if (max < maxArrInd[i]) {
             max = maxArrInd[i];
             ind = i; 
         }
     }
+
     return ind;
 }
 
 let maxArrInd = [5, 10, 60, 9];
 
-// console.log(getMaxInd(maxArrInd));
+console.log(getMaxInd(maxArrInd));
 
 
-// 3.5 Посчитать сумму элементов массива с нечетными индексами 
+//  3.5 Посчитать сумму элементов массива с нечетными индексами 
 
-function getElemSum (sumArr) {
+function getElemSum(sumArr) {
     let sum = 0;
 
     for (let i = 0; i < sumArr.length; i++) {
-        
-        if (i % 2 !==0) {
+        if (i % 2 !== 0) {
             sum += sumArr[i];
         }
     }
-    return sum;
 
+    return sum;
 } 
 let sumArr = [ 8, 5, 9, 4, 45, 89];
-// console.log(getElemSum(sumArr));
+
+console.log(getElemSum(sumArr));
 
 
 // 3.6 	Сделать реверс массива (массив в обратном направлении)
 
-function reverseArray (revArr) {
+function reverseArray(revArr) {
     let reverse = [];
 
     for (let i = revArr.length - 1; i >= 0; i--) {
-
         reverse [reverse.length] = revArr[i];
     }
     
     return reverse;
 }
 
-//    console.log(reverseArray([4, 3, 9, 5, 6, 9]));
+   console.log(reverseArray([4, 3, 9, 5, 6, 9]));
  
 
-// 3.7 7.	Посчитать количество нечетных элементов массива
+//  3.7 7.	Посчитать количество нечетных элементов массива
 
-function getQuantityElem (arrQuant) {
+function getQuantityElem(arrQuant) {
     let quantity = 0;
 
     for (let i = 0; i < arrQuant.length; i++) {
-        
         if (arrQuant[i] % 2 !== 0) {
-           quantity ++;
-           
+            quantity ++;
         }
     }
+
     return quantity;
 }
-let arrQuant = [2, 4, 6, 8, 10, 0]
-// //  console.log(getQuantityElem(arrQuant));
 
-// 4.1	Получить строковое название дня недели по номеру дня. 
+let arrQuant = [2, 4, 6, 8, 10, 0];
 
-function getWeekDay (num) {
-    let day = '';
-    let weekDay = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday",];
-    
-    if ( num > 0 && num < 8) {
-        for (let i = 0; i < array.length; i++) {
-             
-            if (i === num - 1)  {
-                day = weekDay[i];
-            }
-            else (i > 8)   
-            return  "error"
-            }
-        }
-    }   
-    return day
-    
-
-console.log(getWeekDay(8));
+ console.log(getQuantityElem(arrQuant));
 
 
